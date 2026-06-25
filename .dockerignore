@@ -5,5 +5,9 @@ README.md
 MEMORY.md
 *.tmp
 _preview-*
+*.pdf
+*.zip
 .DS_Store
 Thumbs.db
+desktop.ini
+assets/css

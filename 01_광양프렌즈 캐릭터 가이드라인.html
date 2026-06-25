@@ -1,0 +1,2389 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>광양프렌즈 캐릭터 가이드라인</title>
+    <style>
+@font-face {
+  font-family: "Paperlogy";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Paperlogy-4Regular"), url("./assets/fonts/Paperlogy/Paperlogy-4Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Paperlogy";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Paperlogy-7Bold"), url("./assets/fonts/Paperlogy/Paperlogy-7Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Paperlogy";
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local("Paperlogy-9Black"), url("./assets/fonts/Paperlogy/Paperlogy-9Black.woff2") format("woff2");
+}
+
+:root {
+  --paper: #fffdf8;
+  --desk: #eee4d5;
+  --ink: #222527;
+  --muted: #706967;
+  --green: #45a855;
+  --pink: #f77fa0;
+  --gold: #fdae03;
+  --mint: #bfead4;
+  --line: #eadfcf;
+  --a4-width: 1123px;
+  --a4-height: 794px;
+  --screen-scale: 1;
+  --screen-sheet-width: 1123px;
+  --screen-sheet-height: 794px;
+  --screen-gap: 34px;
+  --font: "Paperlogy", "Malgun Gothic", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--ink);
+  background: #f3f3f3;
+  font-family: var(--font);
+  line-break: strict;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+body * {
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.page-nav {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  display: flex;
+  width: max-content;
+  max-width: calc(100vw - 24px);
+  margin: 12px auto 0;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.62);
+  box-shadow: 0 18px 42px rgba(80, 62, 44, 0.11);
+  backdrop-filter: blur(22px) saturate(1.18);
+  scrollbar-width: none;
+}
+
+.page-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.page-nav a {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.36);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+
+.page-nav a:hover {
+  color: var(--green);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.book {
+  display: grid;
+  justify-items: center;
+  gap: var(--screen-gap);
+  padding: 34px 0 70px;
+}
+
+.sheet-frame {
+  position: relative;
+  width: var(--screen-sheet-width);
+  height: var(--screen-sheet-height);
+}
+
+.sheet {
+  position: relative;
+  overflow: hidden;
+  width: var(--a4-width);
+  height: var(--a4-height);
+  min-height: var(--a4-height);
+  padding: 48px 60px;
+  background: #fff;
+  outline: 1px solid rgba(67, 48, 32, 0.08);
+  outline-offset: -1px;
+  transform: scale(var(--screen-scale));
+  transform-origin: top left;
+}
+
+.sheet-top,
+.mini-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.sheet-top {
+  color: var(--green);
+}
+
+.mini-head span {
+  margin-right: 16px;
+  color: var(--accent, var(--green));
+}
+
+.mini-head strong {
+  margin-right: auto;
+}
+
+.mini-head em {
+  color: var(--accent, var(--green));
+  font-style: normal;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 1.08;
+}
+
+h3 {
+  font-size: 22px;
+  line-height: 1.15;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  margin-top: 10px;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.body-copy,
+.cover-copy {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.cover {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  background: #fff;
+}
+
+.cover-art {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.cover-layout {
+  display: grid;
+  grid-template-columns: 0.88fr 1.12fr;
+  align-items: end;
+  gap: 24px;
+}
+
+.cover-title {
+  margin-top: 112px;
+  color: #222527;
+  font-size: 92px;
+  line-height: 0.95;
+}
+
+.cover-title span {
+  display: block;
+  color: var(--green);
+}
+
+.subtitle {
+  margin-top: 18px;
+  color: var(--pink);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.color-rule {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 164px;
+  height: 4px;
+  margin: 44px 0 34px;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.color-rule i:nth-child(1) { background: var(--green); }
+.color-rule i:nth-child(2) { background: var(--pink); }
+.color-rule i:nth-child(3) { background: var(--gold); }
+
+.cover-copy {
+  max-width: 372px;
+}
+
+.cover-characters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: end;
+  min-height: 560px;
+}
+
+.cover-characters figure {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: end;
+}
+
+.cover-characters figure::before,
+.spot-card::before {
+  content: "";
+  position: absolute;
+  inset: auto 10px 24px;
+  height: 250px;
+  border-radius: 48% 52% 46% 54%;
+  background: var(--soft);
+}
+
+.cover-characters img {
+  position: relative;
+  z-index: 1;
+  height: 392px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.cover-characters figure:nth-child(2) img {
+  height: 418px;
+}
+
+.footer-note {
+  position: absolute;
+  left: 60px;
+  bottom: 34px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.page-intro {
+  display: grid;
+  grid-template-columns: 0.42fr 1fr;
+  gap: 22px;
+  align-items: start;
+  margin-top: 58px;
+}
+
+.page-intro .body-copy {
+  max-width: 520px;
+}
+
+.template-content {
+  margin-top: 34px;
+}
+
+.friend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 44px;
+}
+
+.friend-card {
+  display: grid;
+  grid-template-rows: 258px auto;
+  min-height: 500px;
+  padding: 24px 22px;
+  border-top: 4px solid var(--accent);
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.spot-card {
+  position: relative;
+  display: grid;
+  align-items: end;
+  justify-items: center;
+}
+
+.spot-card img {
+  position: relative;
+  z-index: 1;
+  height: 245px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.friend-card h3 {
+  color: var(--accent);
+}
+
+.friend-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 28px;
+}
+
+.friend-badge {
+  flex: 0 0 auto;
+  padding: 6px 10px 5px;
+  border: 1px solid color-mix(in srgb, var(--accent) 42%, white);
+  border-radius: 999px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, white);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.friend-card p {
+  margin-top: 12px;
+}
+
+.trait-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.trait-list article {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 10px;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(112, 105, 103, 0.22);
+}
+
+.trait-list strong {
+  font-size: 12px;
+}
+
+.trait-list span {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin: 30px 0 16px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-label::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.lineup-grid {
+  display: grid;
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.lineup-row {
+  display: grid;
+  grid-template-columns: 126px repeat(4, 1fr);
+  gap: 14px;
+  align-items: end;
+}
+
+.lineup-name {
+  align-self: center;
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.lineup-row figure {
+  display: grid;
+  grid-template-rows: 132px auto;
+  align-items: end;
+}
+
+.lineup-row img {
+  height: 132px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.palette-card {
+  padding-top: 18px;
+  border-top: 4px solid var(--accent);
+}
+
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.swatches i {
+  display: block;
+  height: 94px;
+  border-radius: 4px;
+  background: var(--c);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.swatches b {
+  display: block;
+  margin-top: 7px;
+  font-size: 9px;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.logo-grid,
+.three-d-grid,
+.goods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.logo-card,
+.three-d-grid figure,
+.goods-group {
+  padding-top: 18px;
+  border-top: 4px solid var(--accent);
+}
+
+.logo-panel {
+  display: grid;
+  height: 196px;
+  place-items: center;
+}
+
+.logo-panel img {
+  max-width: 245px;
+  max-height: 132px;
+  object-fit: contain;
+}
+
+.text-logo {
+  color: var(--accent);
+  font-size: 66px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.expression-matrix {
+  display: grid;
+  gap: 22px;
+}
+
+.expression-row {
+  display: grid;
+  grid-template-columns: 126px repeat(5, 1fr);
+  gap: 12px;
+  align-items: end;
+}
+
+.expression-row .lineup-name {
+  align-self: center;
+}
+
+.expression-row figure {
+  display: grid;
+  grid-template-rows: 108px auto;
+  align-items: end;
+}
+
+.expression-row img {
+  height: 108px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.three-d-grid img {
+  height: 392px;
+  object-fit: contain;
+}
+
+.goods-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.goods-list figure {
+  display: grid;
+  grid-template-rows: 92px auto;
+  align-items: end;
+}
+
+.goods-list img {
+  width: 100%;
+  height: 92px;
+  object-fit: contain;
+}
+
+.thanks {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  text-align: center;
+  background: #fff;
+}
+
+.thanks h2 {
+  color: var(--green);
+  font-size: 72px;
+}
+
+.thanks p {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 16px;
+  font-weight: 900;
+  letter-spacing: 0.2em;
+}
+
+.publication-info {
+  position: absolute;
+  right: 60px;
+  bottom: 44px;
+  display: grid;
+  gap: 5px;
+  margin: 0;
+  color: #8a8a8a;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.publication-info div {
+  display: grid;
+  grid-template-columns: 38px auto;
+  gap: 8px;
+}
+
+.publication-info dt,
+.publication-info dd {
+  margin: 0;
+  font-weight: 400;
+}
+
+.gallery-item {
+  cursor: zoom-in;
+}
+
+body.is-lightbox-open {
+  overflow: hidden;
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 84px;
+  background: rgba(34, 37, 39, 0.72);
+}
+
+.lightbox.is-open {
+  display: flex;
+}
+
+.lightbox-figure {
+  display: grid;
+  width: min(82vw, 1040px);
+  max-width: min(78vw, 980px);
+  max-height: 86vh;
+  gap: 14px;
+  justify-items: center;
+}
+
+.lightbox-figure img {
+  width: 100%;
+  height: min(76vh, 760px);
+  max-width: 100%;
+  max-height: 76vh;
+  object-fit: contain;
+  background: #fffdf8;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.26);
+}
+
+.lightbox-figure figcaption {
+  margin-top: 0;
+  color: #fffdf8;
+  font-size: 14px;
+}
+
+.lightbox button {
+  border: 0;
+  color: var(--ink);
+  background: rgba(255, 253, 248, 0.92);
+  font-family: var(--font);
+  cursor: pointer;
+}
+
+.lightbox button:hover,
+.lightbox button:focus-visible {
+  background: #fff;
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  width: 48px;
+  height: 64px;
+  border-radius: 999px;
+  font-size: 42px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.lightbox-prev {
+  left: 28px;
+}
+
+.lightbox-next {
+  right: 28px;
+}
+
+.cover-characters.active img {
+  height: 300px;
+}
+
+.cover-characters.active figure:nth-child(2) img {
+  height: 270px;
+}
+
+.cover-characters.active figure:nth-child(3) img {
+  height: 312px;
+}
+
+.cover-characters.active figure:nth-child(4) img {
+  height: 292px;
+}
+
+.cover-characters.active figure::before {
+  height: 210px;
+}
+
+.setting .page-intro,
+.size-page .page-intro,
+.character-page .page-intro {
+  margin-top: 52px;
+}
+
+.friend-grid.compact {
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.friend-grid.compact .friend-card {
+  grid-template-rows: 174px auto;
+  min-height: 424px;
+  padding: 18px 16px;
+}
+
+.friend-grid.compact .spot-card img {
+  width: auto;
+  max-width: 100%;
+  height: 170px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.friend-grid.compact .baeguni-card .spot-card img {
+  transform: translateY(-10px);
+}
+
+.friend-grid.compact .gijeongi-card .spot-card img {
+  height: 104px;
+}
+
+.friend-grid.compact .friend-card:nth-child(3) .spot-card img {
+  height: 145px;
+}
+
+.friend-grid.compact .maedori-card .spot-card img {
+  height: 121px;
+}
+
+.friend-grid.compact .spot-card::before {
+  height: 158px;
+  inset-inline: 8px;
+}
+
+.friend-grid.compact .gijeongi-card .spot-card::before {
+  height: 120px;
+  inset-inline: 28px;
+}
+
+.friend-grid.compact .friend-card:nth-child(3) .spot-card::before {
+  height: 150px;
+}
+
+.friend-grid.compact .maedori-card .spot-card::before {
+  height: 138px;
+  inset-inline: 18px;
+}
+
+.friend-grid.compact .spot-card {
+  height: 174px;
+  padding-bottom: 16px;
+}
+
+.friend-grid.compact .baeguni-card .spot-card {
+  padding-bottom: 24px;
+}
+
+.friend-grid.compact .baeguni-card .spot-card,
+.friend-grid.compact .gijeongi-card .spot-card,
+.friend-grid.compact .friend-card:nth-child(3) .spot-card,
+.friend-grid.compact .maedori-card .spot-card {
+  align-items: end;
+  justify-items: center;
+}
+
+.friend-grid.compact .body-copy {
+  font-size: 12px;
+  line-height: 1.48;
+}
+
+.friend-grid.compact .trait-list {
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.friend-grid.compact .trait-list article {
+  grid-template-columns: 46px 1fr;
+  padding-top: 8px;
+}
+
+.character-intro {
+  padding: 34px 40px 28px;
+  background: #fff;
+}
+
+.intro-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: #505256;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.intro-top .intro-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: #3b9b58;
+}
+
+.intro-top .intro-brand::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #3b9b58;
+}
+
+.intro-top i {
+  flex: 1;
+  height: 1px;
+  background: rgba(80, 82, 86, 0.45);
+}
+
+.intro-top b {
+  display: grid;
+  place-items: center;
+  min-width: 36px;
+  height: 24px;
+  border-radius: 999px;
+  color: #fff;
+  background: #3b9b58;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+.guide-top .intro-brand {
+  color: var(--accent, #3b9b58);
+}
+
+.guide-top .intro-brand::before,
+.guide-top b {
+  background: var(--accent, #3b9b58);
+}
+
+.intro-title-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr 190px;
+  gap: 26px;
+  align-items: center;
+  margin-top: 38px;
+}
+
+.intro-title-row h2 {
+  color: #1c2023;
+  font-size: 76px;
+  line-height: 0.95;
+  text-shadow: 0 3px 0 rgba(0, 0, 0, 0.06);
+}
+
+.intro-title-row p {
+  padding-left: 24px;
+  border-left: 1px solid rgba(80, 82, 86, 0.42);
+  color: #34373a;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.9;
+}
+
+.intro-stickers {
+  position: relative;
+  height: 88px;
+}
+
+.intro-stickers span {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  color: #1f2528;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.18;
+  text-align: center;
+}
+
+.intro-stickers span:first-child {
+  inset: 1px auto auto 2px;
+  width: 112px;
+  height: 64px;
+  border: 3px solid #9cc68c;
+  border-radius: 50%;
+  background: #c8e2b9;
+  transform: rotate(-8deg);
+}
+
+.intro-stickers span:last-child {
+  right: 0;
+  bottom: 0;
+  width: 86px;
+  height: 70px;
+  border: 3px solid #ff88a5;
+  border-radius: 44% 56% 50% 50%;
+  background: #ff9bb5;
+  transform: rotate(9deg);
+}
+
+.character-intro-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.intro-card {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-rows: auto 104px 174px auto auto;
+  min-width: 0;
+  min-height: 428px;
+  padding: 18px 16px 16px;
+  border: 1.5px solid var(--accent);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.intro-card-title {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.intro-card-title span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  color: #fff;
+  background: var(--accent);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.intro-card-title h3 {
+  color: #1c2023;
+  font-size: 27px;
+  line-height: 1;
+}
+
+.intro-card-title em {
+  color: var(--accent);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1;
+  padding-bottom: 1px;
+}
+
+.intro-card > p {
+  position: relative;
+  z-index: 2;
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1.5px solid var(--accent);
+  color: #34373a;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.72;
+}
+
+.intro-card figure {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  height: 174px;
+  padding-bottom: 16px;
+  perspective: 900px;
+}
+
+.intro-card figure img {
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.intro-character-flip img {
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  transition: transform 560ms cubic-bezier(0.2, 0.72, 0.24, 1), opacity 220ms ease;
+}
+
+.intro-character-2d {
+  height: 170px;
+  transform: translateX(-50%) rotateY(0deg);
+}
+
+.intro-character-3d {
+  bottom: 0;
+  opacity: 0;
+  transform: translateX(-50%) rotateY(-180deg);
+}
+
+.intro-card:hover .intro-character-2d,
+.intro-card:focus-within .intro-character-2d {
+  opacity: 0;
+  transform: translateX(-50%) rotateY(180deg);
+}
+
+.intro-card:hover .intro-character-3d,
+.intro-card:focus-within .intro-character-3d {
+  opacity: 1;
+  transform: translateX(-50%) rotateY(0deg);
+}
+
+.intro-card.baeguni-card .intro-character-2d {
+  height: 170px;
+}
+
+.intro-card.baeguni-card .intro-character-3d {
+  bottom: -28px;
+  height: 238px;
+}
+
+.intro-card.gijeongi-card .intro-character-2d {
+  height: 121px;
+}
+
+.intro-card.gijeongi-card .intro-character-3d {
+  bottom: 5px;
+  height: 149px;
+}
+
+.intro-card.maehyangi-card .intro-character-2d {
+  height: 145px;
+}
+
+.intro-card.maehyangi-card .intro-character-3d {
+  bottom: -11px;
+  height: 200px;
+}
+
+.intro-card.maedori-card .intro-character-2d {
+  height: 121px;
+}
+
+.intro-card.maedori-card .intro-character-3d {
+  bottom: 0;
+  height: 156px;
+}
+
+.intro-tags {
+  position: relative;
+  z-index: 2;
+  padding-top: 14px;
+  border-top: 1.5px dashed var(--accent);
+  color: #616166;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.intro-keywords {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.intro-keywords span {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  height: 32px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 18%, white);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.intro-foot {
+  position: absolute;
+  left: 40px;
+  right: 40px;
+  bottom: 26px;
+  display: flex;
+  justify-content: space-between;
+  color: #66696d;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.guide-foot {
+  left: 60px;
+  right: 60px;
+}
+
+.guide-foot .footer-character-name {
+  color: var(--accent, #3b9b58);
+  font: inherit;
+}
+
+.size-page {
+  padding-bottom: 28px;
+}
+
+.size-page .size-intro {
+  display: block;
+  height: auto;
+  margin-top: 32px;
+}
+
+.size-set-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 44px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.size-set-grid figure {
+  display: grid;
+  min-height: 142px;
+  align-items: center;
+  justify-items: center;
+}
+
+.size-set-grid img {
+  width: min(100%, 415px);
+  max-height: 158px;
+  object-fit: contain;
+}
+
+.size-set-grid .set-basic {
+  grid-column: 1;
+  grid-row: 1;
+  min-height: 158px;
+}
+
+.size-set-grid .set-basic img {
+  width: min(100%, 415px);
+  max-height: 178px;
+}
+
+.size-set-grid figure:nth-child(2) {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.size-set-grid figure:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.size-set-grid figure:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.size-set-grid figure:nth-child(5) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.character-page {
+  --pink: var(--accent);
+  --line: rgba(112, 105, 103, 0.24);
+}
+
+.character-page .mini-head span,
+.character-page .mini-head em,
+.character-page h3,
+.character-page .section-label {
+  color: var(--accent);
+}
+
+.character-page .identity-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: 38px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.identity-title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.character-page .identity-grid h2 {
+  margin-bottom: 0;
+}
+
+.identity-badge {
+  flex: 0 0 auto;
+  padding: 7px 12px 6px;
+  border: 1px solid color-mix(in srgb, var(--accent) 46%, white);
+  border-radius: 999px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, white);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  line-height: 1;
+}
+
+.character-page .spot-card.solo {
+  min-height: 226px;
+}
+
+.identity-visual-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  align-items: end;
+}
+
+.identity-visual-pair figure {
+  min-width: 0;
+}
+
+.character-page .spot-card.solo::before {
+  display: none;
+}
+
+.character-page .spot-card.solo img {
+  width: auto;
+  max-width: 100%;
+  height: 224px;
+  transform: translateY(-40px);
+}
+
+.identity-3d {
+  display: grid;
+  align-items: end;
+  justify-items: center;
+  min-height: 226px;
+}
+
+.identity-3d img {
+  width: auto;
+  max-width: 132%;
+  height: 304px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+#gijeongi-identity .identity-3d img {
+  height: 284px;
+}
+
+#maehyangi-identity .identity-3d img {
+  height: 320px;
+}
+
+.maedori-identity-3d img {
+  height: 286px;
+}
+
+.identity-bottom-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 28px;
+  align-items: start;
+  margin-top: 18px;
+}
+
+.identity-bottom-grid .section-label {
+  margin: 0 0 10px;
+}
+
+.turnaround-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  align-items: end;
+  padding-top: 8px;
+}
+
+.turnaround-grid figure {
+  display: grid;
+  grid-template-rows: 98px auto;
+  align-items: end;
+}
+
+.turnaround-grid img {
+  height: 98px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.character-identity .section-label {
+  margin: 20px 0 10px;
+}
+
+.character-identity .color-label {
+  margin-top: 18px;
+}
+
+.identity-color-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 10px;
+}
+
+.identity-color-row article {
+  display: grid;
+  grid-template-columns: 38px 1fr;
+  grid-template-rows: auto auto;
+  column-gap: 8px;
+  min-height: 52px;
+  align-content: start;
+  align-items: start;
+}
+
+.identity-color-row i {
+  grid-row: 1 / span 2;
+  display: block;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 0;
+  border-radius: 4px;
+  background: var(--c);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.identity-color-row b,
+.identity-color-row dl {
+  display: block;
+  min-width: 0;
+  margin: 0;
+  font-size: 8px;
+  line-height: 1.18;
+}
+
+.identity-color-row b {
+  margin-bottom: 5px;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.identity-color-row dl {
+  color: var(--muted);
+}
+
+.identity-color-row dl div {
+  display: grid;
+  grid-template-columns: 26px 1fr;
+  gap: 3px;
+}
+
+.identity-color-row dt,
+.identity-color-row dd {
+  margin: 0;
+}
+
+.identity-color-row dt {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.swatch-row.detailed {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+}
+
+.swatch-row.detailed i {
+  display: block;
+  height: 150px;
+  border-radius: 4px;
+  background: var(--c);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.swatch-row.detailed b {
+  display: block;
+  margin-top: 10px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.color-values {
+  display: grid;
+  gap: 3px;
+  margin: 8px 0 0;
+  padding: 0;
+  color: var(--muted);
+  font-size: 9px;
+  line-height: 1.25;
+}
+
+.color-values div {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 4px;
+}
+
+.color-values dt,
+.color-values dd {
+  margin: 0;
+}
+
+.color-values dt {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.ratio-bar {
+  display: grid;
+  grid-template-columns: 60fr 20fr 10fr 5fr 5fr;
+  height: 16px;
+  margin-top: 46px;
+}
+
+.type-logo-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 54px;
+  align-items: center;
+  min-height: 238px;
+}
+
+.logo-panel.large {
+  height: 238px;
+}
+
+.logo-panel.large img {
+  max-width: 410px;
+  max-height: 158px;
+}
+
+.logo-notes {
+  display: grid;
+  gap: 14px;
+}
+
+.logo-notes article {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 0;
+  border-top: 1px solid rgba(112, 105, 103, 0.22);
+}
+
+.logo-notes strong {
+  font-size: 13px;
+}
+
+.logo-notes span {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.type-logo-combo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.type-logo-combo-grid figure {
+  display: grid;
+  grid-template-rows: 132px auto;
+  align-items: end;
+}
+
+.type-logo-combo-grid img {
+  height: 132px;
+  object-fit: contain;
+}
+
+.type-logo-variant-layout {
+  display: grid;
+  grid-template-columns: 1.48fr 0.72fr;
+  gap: 42px;
+  align-items: center;
+  min-height: 390px;
+}
+
+.type-logo-dimensional {
+  display: grid;
+  min-height: 360px;
+  align-content: center;
+  justify-items: center;
+}
+
+.type-logo-dimensional img {
+  width: 100%;
+  max-width: 610px;
+  max-height: 290px;
+  object-fit: contain;
+}
+
+.maedori-logo-main img {
+  max-width: 520px;
+  max-height: 250px;
+}
+
+.type-logo-small-variants {
+  display: grid;
+  gap: 24px;
+}
+
+.type-logo-small-variants figure {
+  display: grid;
+  min-height: 150px;
+  align-content: center;
+  justify-items: center;
+}
+
+.type-logo-small-variants img {
+  width: 100%;
+  max-width: 240px;
+  max-height: 86px;
+  object-fit: contain;
+}
+
+.type-logo-variant-layout figcaption {
+  margin-top: 14px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.expression-grid.expression-grid-wide.all {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px 14px;
+}
+
+.expression-grid.expression-grid-wide.all figure {
+  display: grid;
+  grid-template-rows: 138px auto;
+  align-items: end;
+}
+
+.expression-grid.expression-grid-wide.all img {
+  height: 138px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all img {
+  width: auto;
+  max-width: 100%;
+  max-height: none;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure {
+  grid-template-rows: 168px auto;
+  justify-items: center;
+  text-align: center;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(1) img {
+  height: 148px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(2) img {
+  height: 154px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(3) img {
+  height: 164px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(4) img {
+  height: 164px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(5) img {
+  height: 146px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(6) img {
+  height: 154px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(7) img {
+  height: 160px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(8) img {
+  height: 158px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(9) img {
+  height: 150px;
+}
+
+#gijeongi-expressions .expression-grid.expression-grid-wide.all figure:nth-child(10) img {
+  height: 154px;
+}
+
+.three-d-layout.all {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.three-d-layout.all img {
+  width: 100%;
+  height: 412px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.three-d-layout.all figcaption,
+.goods-grid.all figcaption {
+  margin-top: 8px;
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.goods-grid.all {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 4px;
+  row-gap: 14px;
+  width: calc(100% + 18px);
+  margin-left: -9px;
+  margin-right: -9px;
+  margin-top: 20px;
+}
+
+.goods-grid.all figure {
+  display: grid;
+  grid-template-rows: 194px auto;
+  align-items: end;
+  min-width: 0;
+}
+
+.goods-grid.all img {
+  width: 100%;
+  height: 194px;
+  object-fit: contain;
+}
+
+.goods-grid.all .goods-image {
+  width: 100%;
+  height: 194px;
+  border-radius: 4px;
+  background-color: #f7f8f4;
+  background-image: var(--goods-bg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1px rgba(34, 37, 39, 0.06);
+  transition: background-size 0.25s ease;
+}
+
+.goods-grid.all figure:hover .goods-image {
+  background-size: 108%;
+}
+
+.goods-grid.all figcaption {
+  margin-top: 4px;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.character-page .spot-card.solo.maedori-solo img {
+  height: 208px;
+  transform: translateY(-34px);
+}
+
+.maedori-goods-grid {
+  align-items: start;
+}
+
+.maedori-goods-grid figure {
+  grid-template-rows: auto auto;
+}
+
+.maedori-goods-grid .goods-image {
+  height: auto;
+  aspect-ratio: 1 / 1;
+}
+
+@media (max-width: 860px) {
+  .page-nav {
+    justify-content: flex-start;
+    margin-inline: 12px;
+  }
+
+  .book {
+    padding-top: 22px;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0;
+  }
+
+  html,
+  body {
+    width: 297mm;
+    background: #fff;
+  }
+
+  .page-nav,
+  .lightbox {
+    display: none !important;
+  }
+
+  .book {
+    display: block;
+    width: 297mm;
+    padding: 0;
+    background: #fff;
+  }
+
+  .sheet-frame {
+    width: 297mm;
+    height: 210mm;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .sheet {
+    width: 297mm;
+    height: 210mm;
+    min-height: 210mm;
+    transform: none;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <nav class="page-nav" aria-label="광양프렌즈 가이드라인 페이지">
+      <a href="#cover">표지</a>
+      <a href="#friends-setting">설정</a>
+      <a href="#friends-size">사이즈</a>
+      <a href="#baeguni-identity">백운이</a>
+      <a href="#gijeongi-identity">기정이</a>
+      <a href="#maehyangi-identity">매향이</a>
+      <a href="#maedori-identity">매돌이</a>
+      <a href="#thanks">마무리</a>
+    </nav>
+
+    <main class="book" aria-label="광양프렌즈 캐릭터 가이드라인">
+      <section class="sheet cover" id="cover">
+        <img class="cover-art" src="./assets/cover/gw-friends-front.png" alt="광양프렌즈 표지" />
+      </section>
+
+      <section class="sheet setting character-intro" id="friends-setting">
+        <header class="intro-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>01</b></header>
+        <div class="intro-title-row">
+          <h2>네 캐릭터 소개</h2>
+          <p>광양을 대표하는 네 프렌즈를 소개합니다.<br />각자의 개성과 매력으로 광양의 가치를 전합니다.</p>
+          <div class="intro-stickers" aria-hidden="true"><span>WE ARE<br />GWANGYANG<br />FRIENDS!</span><span>HELLO<br />FRIENDS!</span></div>
+        </div>
+        <div class="character-intro-grid">
+          <article class="intro-card baeguni-card" style="--accent:#45a855; --soft:#edf9e8">
+            <div class="intro-card-title"><span>01</span><h3>백운이</h3><em>마스코트</em></div>
+            <p>광양의 자연을 상징하는 백운산에서 온 친구! 푸른 자연처럼 맑고 든든한 에너지로 광양의 힘을 전해요.</p>
+            <figure class="intro-character-flip"><img class="intro-character-2d" src="./assets/baeguni/character/front.svg" alt="백운이 2D 기본 캐릭터" /><img class="intro-character-3d" src="./assets/baeguni/3d/baeguni-3d-basic.png" alt="백운이 3D 기본 캐릭터" /></figure>
+            <div class="intro-tags">#자연의친구 #긍정에너지 #든든한리더</div>
+            <div class="intro-keywords"><span>자연</span><span>생기</span><span>신뢰</span></div>
+          </article>
+          <article class="intro-card gijeongi-card" style="--accent:#fdae03; --soft:#fff8df">
+            <div class="intro-card-title"><span>02</span><h3>기정이</h3><em>캐릭터</em></div>
+            <p>광양을 응원하는 에너지 요정! 언제나 밝고 씩씩하게 응원의 메시지를 전하며 모두의 도전을 함께 응원해요.</p>
+            <figure class="intro-character-flip"><img class="intro-character-2d" src="./assets/gijeongi/character/front.svg" alt="기정이 2D 기본 캐릭터" /><img class="intro-character-3d" src="./assets/gijeongi/3d/gijeongi-3d-basic.png" alt="기정이 3D 기본 캐릭터" /></figure>
+            <div class="intro-tags">#응원의아이콘 #활력충전 #도전메이트</div>
+            <div class="intro-keywords"><span>활력</span><span>응원</span><span>자신감</span></div>
+          </article>
+          <article class="intro-card maehyangi-card" style="--accent:#f77fa0; --soft:#fdecef">
+            <div class="intro-card-title"><span>03</span><h3>매향이</h3><em>캐릭터</em></div>
+            <p>광양 매화의 향기를 담은 사랑스러운 친구! 따뜻하고 상냥한 마음으로 모두에게 향기로운 행복을 전해요.</p>
+            <figure class="intro-character-flip"><img class="intro-character-2d" src="./assets/maehyangi/character/front.svg" alt="매향이 2D 기본 캐릭터" /><img class="intro-character-3d" src="./assets/maehyangi/3d/maehyangi-3d-basic.png" alt="매향이 3D 기본 캐릭터" /></figure>
+            <div class="intro-tags">#매화의친구 #따뜻한마음 #행복전도사</div>
+            <div class="intro-keywords"><span>향기</span><span>친근함</span><span>따뜻함</span></div>
+          </article>
+          <article class="intro-card maedori-card" style="--accent:#90DE63; --soft:#eefadc">
+            <div class="intro-card-title"><span>04</span><h3>매돌이</h3><em>캐릭터</em></div>
+            <p>광양의 대표 농특산품 매실을 닮은 개구쟁이! 초록초록 싱그러움과 귀여운 매력으로 광양을 알려요.</p>
+            <figure class="intro-character-flip"><img class="intro-character-2d" src="./assets/maedori/character/front.svg" alt="매돌이 2D 기본 캐릭터" /><img class="intro-character-3d" src="./assets/maedori/3d/maedori-3d-front.png" alt="매돌이 3D 기본 캐릭터" /></figure>
+            <div class="intro-tags">#매실친구 #싱그러움 #귀여운소년</div>
+            <div class="intro-keywords"><span>매실</span><span>생기</span><span>친근함</span></div>
+          </article>
+        </div>
+        <footer class="intro-foot"><span>FOUR CHARACTERS, ONE GWANGYANG</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet size-page" id="friends-size">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>02</b></header>
+        <div class="page-intro size-intro">
+          <h2>사이즈와 동작 조합</h2>
+          <p class="body-copy">광양프렌즈 네 캐릭터가 함께 사용될 때의 키 기준과 화면 안에서의 배치 균형을 정리합니다. 기본 정렬뿐 아니라 다양한 동작이 함께 놓이는 상황에서도 각 캐릭터의 개성과 팀으로서의 조화가 자연스럽게 보이도록 기준을 제시합니다.</p>
+        </div>
+        <div class="size-set-grid">
+          <figure class="set-basic"><img src="./assets/set/set_basic.png" alt="광양프렌즈 네 캐릭터 기본 사이즈 세트" /></figure>
+          <figure><img src="./assets/set/set_01@2x-8.png" alt="광양프렌즈 사이즈 기준 세트 01" /></figure>
+          <figure><img src="./assets/set/set_02@2x-8.png" alt="광양프렌즈 사이즈 기준 세트 02" /></figure>
+          <figure><img src="./assets/set/set_03@2x-8.png" alt="광양프렌즈 사이즈 기준 세트 03" /></figure>
+          <figure><img src="./assets/set/set_04@2x-8.png" alt="광양프렌즈 사이즈 기준 세트 04" /></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span>광양프렌즈 사이즈와 동작 조합</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page character-identity" id="baeguni-identity" style="--accent:#45a855; --soft:#edf9e8">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>03</b></header>
+        <div class="identity-grid">
+          <div>
+            <div class="identity-title-row"><h2>백운이를 소개합니다</h2><span class="identity-badge">마스코트</span></div>
+            <p class="body-copy">백운산의 맑은 기운을 닮아 건강하고 싱그러운 에너지로 광양을 소개합니다.</p>
+            <div class="trait-list">
+              <article><strong>성격</strong><span>활기차고 순수하며 든든한 이미지</span></article>
+              <article><strong>특징</strong><span>초록 산의 실루엣, 둥근 얼굴, 밝은 표정</span></article>
+              <article><strong>키워드</strong><span>자연 · 생기 · 신뢰</span></article>
+            </div>
+          </div>
+          <div class="identity-visual-pair">
+            <figure class="spot-card solo"><img src="./assets/baeguni/character/front.svg" alt="백운이 2D 기본 캐릭터" /></figure>
+            <figure class="identity-3d"><img src="./assets/baeguni/3d/baeguni-3d-basic.png" alt="백운이 3D 기본 캐릭터" /></figure>
+          </div>
+        </div>
+        <div class="identity-bottom-grid">
+          <div class="identity-color-panel">
+        <p class="section-label color-label">브랜드 컬러</p>
+        <div class="identity-color-row">
+          <article style="--c:#8ED165"><i></i><b>메인 그린</b><dl><div><dt>HEX</dt><dd>#8ED165</dd></div><div><dt>RGB</dt><dd>142 209 101</dd></div><div><dt>CMYK</dt><dd>32 0 52 18</dd></div></dl></article>
+          <article style="--c:#42944B"><i></i><b>딥 그린</b><dl><div><dt>HEX</dt><dd>#42944B</dd></div><div><dt>RGB</dt><dd>66 148 75</dd></div><div><dt>CMYK</dt><dd>55 0 49 42</dd></div></dl></article>
+          <article style="--c:#F89C87"><i></i><b>살구 포인트</b><dl><div><dt>HEX</dt><dd>#F89C87</dd></div><div><dt>RGB</dt><dd>248 156 135</dd></div><div><dt>CMYK</dt><dd>0 37 46 3</dd></div></dl></article>
+          <article style="--c:#FEFEFE"><i></i><b>화이트</b><dl><div><dt>HEX</dt><dd>#FEFEFE</dd></div><div><dt>RGB</dt><dd>254 254 254</dd></div><div><dt>CMYK</dt><dd>0 0 0 0</dd></div></dl></article>
+          <article style="--c:#131211"><i></i><b>블랙</b><dl><div><dt>HEX</dt><dd>#131211</dd></div><div><dt>RGB</dt><dd>19 18 17</dd></div><div><dt>CMYK</dt><dd>0 5 11 93</dd></div></dl></article>
+        </div>
+          </div>
+          <div class="identity-turnaround-panel">
+        <p class="section-label">턴어라운드</p>
+        <div class="turnaround-grid">
+          <figure><img src="./assets/baeguni/character/front.svg" alt="백운이 앞모습" /><figcaption>앞모습</figcaption></figure>
+          <figure><img src="./assets/baeguni/character/left.svg" alt="백운이 좌측면" /><figcaption>우측면</figcaption></figure>
+          <figure><img src="./assets/baeguni/character/right.svg" alt="백운이 우측면" /><figcaption>좌측면</figcaption></figure>
+          <figure><img src="./assets/baeguni/character/back.svg" alt="백운이 뒷모습" /><figcaption>뒷모습</figcaption></figure>
+        </div>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">백운이</b> 마스코트 아이덴티티 / 디자인 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="baeguni-typelogo" style="--accent:#45a855; --soft:#edf9e8">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>04</b></header>
+        <div class="page-intro">
+          <h2>백운이 타입로고</h2>
+          <p class="body-copy">백운이의 둥근 인상과 캐릭터 고유 이미지를 반영한 전용 표기 시스템입니다. 캐릭터명 표기와 대표 타이틀에 우선 사용합니다.</p>
+        </div>
+        <div class="template-content type-logo-variant-layout">
+          <figure class="type-logo-dimensional"><img src="./assets/type-logo/입체형_백운이@2x-8.png" alt="백운이 타입로고 입체형" /><figcaption>입체형</figcaption></figure>
+          <div class="type-logo-small-variants">
+            <figure><img src="./assets/type-logo/단순형_백운이@2x-8.png" alt="백운이 타입로고 단순형" /><figcaption>단순형</figcaption></figure>
+            <figure><img src="./assets/type-logo/블랙형_백운이@2x-8.png" alt="백운이 타입로고 블랙형" /><figcaption>블랙형</figcaption></figure>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">백운이</b> 타입로고 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+      <section class="sheet character-page" id="baeguni-expressions" style="--accent:#45a855; --soft:#edf9e8">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>05</b></header>
+        <div class="page-intro">
+          <h2>동작가이드</h2>
+          <p class="body-copy">백운이의 표정과 동작은 고유한 성격을 전달하며, 상황에 맞는 감정 표현으로 친근감을 높입니다.</p>
+        </div>
+        <div class="template-content expression-grid expression-grid-wide all">
+          <figure><img src="./assets/baeguni/expression/expression-01.svg" alt="백운이 인사 동작" /><figcaption>1. 인사</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-02.svg" alt="백운이 신남 동작" /><figcaption>2. 신남</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-03.svg" alt="백운이 감동 동작" /><figcaption>3. 감동</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-04.svg" alt="백운이 축하 동작" /><figcaption>4. 축하</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-05.svg" alt="백운이 웃김 동작" /><figcaption>5. 웃김</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-06.svg" alt="백운이 궁금 동작" /><figcaption>6. 궁금</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-07.svg" alt="백운이 화남 동작" /><figcaption>7. 화남</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-08.svg" alt="백운이 응원 동작" /><figcaption>8. 응원</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-09.svg" alt="백운이 사랑해 동작" /><figcaption>9. 사랑해</figcaption></figure>
+          <figure><img src="./assets/baeguni/expression/expression-10.svg" alt="백운이 슬픔 동작" /><figcaption>10. 슬픔</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">백운이</b> 동작가이드 / 표정 표현</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="baeguni-three-d" style="--accent:#45a855; --soft:#edf9e8">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>06</b></header>
+        <div class="page-intro">
+          <h2>3D 캐릭터 활용</h2>
+          <p class="body-copy">백운이의 산 능선 실루엣과 구름처럼 둥근 얼굴을 유지하면서, 기본·신남·인사 동작으로 3D 활용 범위를 정리합니다.</p>
+        </div>
+        <div class="template-content three-d-layout all">
+          <figure><img src="./assets/baeguni/3d/baeguni-3d-basic.png" alt="백운이 기본형 3D" /><figcaption>기본형 3D</figcaption></figure>
+          <figure><img src="./assets/baeguni/3d/baeguni-3d-happy.png" alt="백운이 신남 3D" /><figcaption>신남 3D</figcaption></figure>
+          <figure><img src="./assets/baeguni/3d/baeguni-3d-hello.png" alt="백운이 인사 3D" /><figcaption>인사 3D</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">백운이</b> 3D 캐릭터 활용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="baeguni-applications" style="--accent:#45a855; --soft:#edf9e8">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>07</b></header>
+        <div class="page-intro">
+          <h2>굿즈 적용</h2>
+          <p class="body-copy">백운이는 외출·학업·책상·휴식 장면에 자연스럽게 어울리는 실용 굿즈로 확장해, 밝고 싱그러운 이미지를 일상 속에 전달합니다.</p>
+        </div>
+        <div class="template-content goods-grid all ">
+          <figure><div class="goods-image" role="img" aria-label="백운이 우산" data-gallery-src="./assets/baeguni/goods/product-01.png" style="--goods-bg:url('./assets/baeguni/goods/product-01.png')"></div><figcaption>우산</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 핸드타월" data-gallery-src="./assets/baeguni/goods/product-02.png" style="--goods-bg:url('./assets/baeguni/goods/product-02.png')"></div><figcaption>핸드타월</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 클리어파일" data-gallery-src="./assets/baeguni/goods/product-03.png" style="--goods-bg:url('./assets/baeguni/goods/product-03.png')"></div><figcaption>클리어파일</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 마스킹테이프" data-gallery-src="./assets/baeguni/goods/product-04.png" style="--goods-bg:url('./assets/baeguni/goods/product-04.png')"></div><figcaption>마스킹테이프</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 네임택" data-gallery-src="./assets/baeguni/goods/product-05.png" style="--goods-bg:url('./assets/baeguni/goods/product-05.png')"></div><figcaption>네임택</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 데스크매트" data-gallery-src="./assets/baeguni/goods/product-06.png" style="--goods-bg:url('./assets/baeguni/goods/product-06.png')"></div><figcaption>데스크매트</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 도시락통" data-gallery-src="./assets/baeguni/goods/product-07.png" style="--goods-bg:url('./assets/baeguni/goods/product-07.png')"></div><figcaption>도시락통</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 손거울" data-gallery-src="./assets/baeguni/goods/product-08.png" style="--goods-bg:url('./assets/baeguni/goods/product-08.png')"></div><figcaption>손거울</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 쿠션" data-gallery-src="./assets/baeguni/goods/product-09.png" style="--goods-bg:url('./assets/baeguni/goods/product-09.png')"></div><figcaption>쿠션</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="백운이 블랭킷" data-gallery-src="./assets/baeguni/goods/product-10.png" style="--goods-bg:url('./assets/baeguni/goods/product-10.png')"></div><figcaption>블랭킷</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">백운이</b> 굿즈 적용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page character-identity" id="gijeongi-identity" style="--accent:#fdae03; --soft:#fff8df">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>08</b></header>
+        <div class="identity-grid">
+          <div>
+            <div class="identity-title-row"><h2>기정이를 소개합니다</h2><span class="identity-badge">캐릭터</span></div>
+            <p class="body-copy">광양의 밝은 기운과 따뜻한 응원을 전하며, 다양한 상황에서 힘찬 메시지를 건넵니다.</p>
+            <div class="trait-list">
+              <article><strong>성격</strong><span>쾌활하고 적극적이며 응원하는 이미지</span></article>
+              <article><strong>특징</strong><span>따뜻한 노란 포인트, 단정한 형태, 명확한 실루엣</span></article>
+              <article><strong>키워드</strong><span>활력 · 응원 · 자신감</span></article>
+            </div>
+          </div>
+          <div class="identity-visual-pair">
+            <figure class="spot-card solo"><img src="./assets/gijeongi/character/front.svg" alt="기정이 2D 기본 캐릭터" /></figure>
+            <figure class="identity-3d"><img src="./assets/gijeongi/3d/gijeongi-3d-basic.png" alt="기정이 3D 기본 캐릭터" /></figure>
+          </div>
+        </div>
+        <div class="identity-bottom-grid">
+          <div class="identity-color-panel">
+        <p class="section-label color-label">브랜드 컬러</p>
+        <div class="identity-color-row">
+          <article style="--c:#FED871"><i></i><b>메인 옐로</b><dl><div><dt>HEX</dt><dd>#FED871</dd></div><div><dt>RGB</dt><dd>254 216 113</dd></div><div><dt>CMYK</dt><dd>0 15 56 0</dd></div></dl></article>
+          <article style="--c:#EAE5DA"><i></i><b>샌드 베이스</b><dl><div><dt>HEX</dt><dd>#EAE5DA</dd></div><div><dt>RGB</dt><dd>234 229 218</dd></div><div><dt>CMYK</dt><dd>0 2 7 8</dd></div></dl></article>
+          <article style="--c:#FFF8DF"><i></i><b>크림</b><dl><div><dt>HEX</dt><dd>#FFF8DF</dd></div><div><dt>RGB</dt><dd>255 248 223</dd></div><div><dt>CMYK</dt><dd>0 3 13 0</dd></div></dl></article>
+          <article style="--c:#fdae03"><i></i><b>비비드 골드</b><dl><div><dt>HEX</dt><dd>#FDAE03</dd></div><div><dt>RGB</dt><dd>253 174 3</dd></div><div><dt>CMYK</dt><dd>0 31 99 1</dd></div></dl></article>
+          <article style="--c:#111111"><i></i><b>블랙</b><dl><div><dt>HEX</dt><dd>#111111</dd></div><div><dt>RGB</dt><dd>17 17 17</dd></div><div><dt>CMYK</dt><dd>0 0 0 93</dd></div></dl></article>
+        </div>
+          </div>
+          <div class="identity-turnaround-panel">
+        <p class="section-label">턴어라운드</p>
+        <div class="turnaround-grid">
+          <figure><img src="./assets/gijeongi/character/front.svg" alt="기정이 앞모습" /><figcaption>앞모습</figcaption></figure>
+          <figure><img src="./assets/gijeongi/character/left.svg" alt="기정이 좌측면" /><figcaption>우측면</figcaption></figure>
+          <figure><img src="./assets/gijeongi/character/right.svg" alt="기정이 우측면" /><figcaption>좌측면</figcaption></figure>
+          <figure><img src="./assets/gijeongi/character/back.svg" alt="기정이 뒷모습" /><figcaption>뒷모습</figcaption></figure>
+        </div>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">기정이</b> 캐릭터 아이덴티티 / 디자인 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="gijeongi-typelogo" style="--accent:#fdae03; --soft:#fff8df">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>09</b></header>
+        <div class="page-intro">
+          <h2>기정이 타입로고</h2>
+          <p class="body-copy">기정이의 둥근 인상과 캐릭터 고유 이미지를 반영한 전용 표기 시스템입니다. 캐릭터명 표기와 대표 타이틀에 우선 사용합니다.</p>
+        </div>
+        <div class="template-content type-logo-variant-layout">
+          <figure class="type-logo-dimensional"><img src="./assets/type-logo/입체형_기정이@2x-8.png" alt="기정이 타입로고 입체형" /><figcaption>입체형</figcaption></figure>
+          <div class="type-logo-small-variants">
+            <figure><img src="./assets/type-logo/단순형_기정이@2x-8.png" alt="기정이 타입로고 단순형" /><figcaption>단순형</figcaption></figure>
+            <figure><img src="./assets/type-logo/블랙형_기정이@2x-8.png" alt="기정이 타입로고 블랙형" /><figcaption>블랙형</figcaption></figure>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">기정이</b> 타입로고 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+      <section class="sheet character-page" id="gijeongi-expressions" style="--accent:#fdae03; --soft:#fff8df">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>10</b></header>
+        <div class="page-intro">
+          <h2>동작가이드</h2>
+          <p class="body-copy">기정이의 표정과 동작은 고유한 성격을 전달하며, 상황에 맞는 감정 표현으로 친근감을 높입니다.</p>
+        </div>
+        <div class="template-content expression-grid expression-grid-wide all">
+          <figure><img src="./assets/gijeongi/expression/expression-01.svg" alt="기정이 인사 동작" /><figcaption>1. 인사</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-02.svg" alt="기정이 신남 동작" /><figcaption>2. 신남</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-03.svg" alt="기정이 감동 동작" /><figcaption>3. 감동</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-04.svg" alt="기정이 축하 동작" /><figcaption>4. 축하</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-05.svg" alt="기정이 웃김 동작" /><figcaption>5. 웃김</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-06.svg" alt="기정이 파이팅 동작" /><figcaption>6. 파이팅</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-07.svg" alt="기정이 궁금 동작" /><figcaption>7. 궁금</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-08.svg" alt="기정이 화남 동작" /><figcaption>8. 화남</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-09.svg" alt="기정이 따봉 동작" /><figcaption>9. 따봉</figcaption></figure>
+          <figure><img src="./assets/gijeongi/expression/expression-10.svg" alt="기정이 사랑해 동작" /><figcaption>10. 사랑해</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">기정이</b> 동작가이드 / 표정 표현</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="gijeongi-three-d" style="--accent:#fdae03; --soft:#fff8df">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>11</b></header>
+        <div class="page-intro">
+          <h2>3D 캐릭터 활용</h2>
+          <p class="body-copy">기정이의 기본 인상과 특징을 유지하되, 3D 동작의 유연성을 위해 팔다리 비율은 상황에 맞게 일부 조정할 수 있습니다.</p>
+        </div>
+        <div class="template-content three-d-layout all">
+          <figure><img src="./assets/gijeongi/3d/gijeongi-3d-basic.png" alt="기정이 기본형 3D" /><figcaption>기본형 3D</figcaption></figure>
+          <figure><img src="./assets/gijeongi/3d/gijeongi-3d-cheer.png" alt="기정이 응원형 3D" /><figcaption>응원형 3D</figcaption></figure>
+          <figure><img src="./assets/gijeongi/3d/gijeongi-3d-heart.png" alt="기정이 하트형 3D" /><figcaption>하트형 3D</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">기정이</b> 3D 캐릭터 활용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="gijeongi-applications" style="--accent:#fdae03; --soft:#fff8df">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>12</b></header>
+        <div class="page-intro">
+          <h2>굿즈 적용</h2>
+          <p class="body-copy">기정이는 책상 위 수집 굿즈부터 외출용 소품까지 확장해, 밝고 귀여운 인상을 10~20대의 일상 장면에 자연스럽게 전달합니다.</p>
+        </div>
+        <div class="template-content goods-grid all ">
+          <figure><div class="goods-image" role="img" aria-label="기정이 포토카드" data-gallery-src="./assets/gijeongi/goods/product-01.png" style="--goods-bg:url('./assets/gijeongi/goods/product-01.png')"></div><figcaption>포토카드</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 스티커팩" data-gallery-src="./assets/gijeongi/goods/product-02.png" style="--goods-bg:url('./assets/gijeongi/goods/product-02.png')"></div><figcaption>스티커팩</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 아크릴 키링" data-gallery-src="./assets/gijeongi/goods/product-03.png" style="--goods-bg:url('./assets/gijeongi/goods/product-03.png')"></div><figcaption>아크릴 키링</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 스마트톡" data-gallery-src="./assets/gijeongi/goods/product-04.png" style="--goods-bg:url('./assets/gijeongi/goods/product-04.png')"></div><figcaption>스마트톡</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 틴케이스" data-gallery-src="./assets/gijeongi/goods/product-05.png" style="--goods-bg:url('./assets/gijeongi/goods/product-05.png')"></div><figcaption>틴케이스</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 파우치" data-gallery-src="./assets/gijeongi/goods/product-06.png" style="--goods-bg:url('./assets/gijeongi/goods/product-06.png')"></div><figcaption>파우치</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 텀블러" data-gallery-src="./assets/gijeongi/goods/product-07.png" style="--goods-bg:url('./assets/gijeongi/goods/product-07.png')"></div><figcaption>텀블러</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 스프링 노트" data-gallery-src="./assets/gijeongi/goods/product-08.png" style="--goods-bg:url('./assets/gijeongi/goods/product-08.png')"></div><figcaption>스프링 노트</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 미니 토트백" data-gallery-src="./assets/gijeongi/goods/product-09.png" style="--goods-bg:url('./assets/gijeongi/goods/product-09.png')"></div><figcaption>미니 토트백</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="기정이 인형 키링" data-gallery-src="./assets/gijeongi/goods/product-10.png" style="--goods-bg:url('./assets/gijeongi/goods/product-10.png')"></div><figcaption>인형 키링</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">기정이</b> 굿즈 적용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page character-identity" id="maehyangi-identity" style="--accent:#f77fa0; --soft:#fdecef">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>13</b></header>
+        <div class="identity-grid">
+          <div>
+            <div class="identity-title-row"><h2>매향이를 소개합니다</h2><span class="identity-badge">캐릭터</span></div>
+            <p class="body-copy">향긋한 매화향기를 품고, 광양 곳곳을 누비며 시민들에게 따뜻한 마음을 전합니다.</p>
+            <div class="trait-list">
+              <article><strong>성격</strong><span>밝고 다정하며 배려심 있는 이미지</span></article>
+              <article><strong>특징</strong><span>핑크 양갈래 묶음머리, 꽃 장식, 부드러운 미소</span></article>
+              <article><strong>키워드</strong><span>친근함 · 따뜻함 · 긍정</span></article>
+            </div>
+          </div>
+          <div class="identity-visual-pair">
+            <figure class="spot-card solo"><img src="./assets/maehyangi/character/front.svg" alt="매향이 2D 기본 캐릭터" /></figure>
+            <figure class="identity-3d"><img src="./assets/maehyangi/3d/maehyangi-3d-basic.png" alt="매향이 3D 기본 캐릭터" /></figure>
+          </div>
+        </div>
+        <div class="identity-bottom-grid">
+          <div class="identity-color-panel">
+        <p class="section-label color-label">브랜드 컬러</p>
+        <div class="identity-color-row">
+          <article style="--c:#FFD1DE"><i></i><b>메인 핑크</b><dl><div><dt>HEX</dt><dd>#FFD1DE</dd></div><div><dt>RGB</dt><dd>255 209 222</dd></div><div><dt>CMYK</dt><dd>0 18 13 0</dd></div></dl></article>
+          <article style="--c:#FFC1D4"><i></i><b>블러시 핑크</b><dl><div><dt>HEX</dt><dd>#FFC1D4</dd></div><div><dt>RGB</dt><dd>255 193 212</dd></div><div><dt>CMYK</dt><dd>0 24 17 0</dd></div></dl></article>
+          <article style="--c:#FFFDFA"><i></i><b>화이트</b><dl><div><dt>HEX</dt><dd>#FFFDFA</dd></div><div><dt>RGB</dt><dd>255 253 250</dd></div><div><dt>CMYK</dt><dd>0 1 2 0</dd></div></dl></article>
+          <article style="--c:#BFEAD4"><i></i><b>민트</b><dl><div><dt>HEX</dt><dd>#BFEAD4</dd></div><div><dt>RGB</dt><dd>191 234 212</dd></div><div><dt>CMYK</dt><dd>18 0 9 8</dd></div></dl></article>
+          <article style="--c:#111111"><i></i><b>블랙</b><dl><div><dt>HEX</dt><dd>#111111</dd></div><div><dt>RGB</dt><dd>17 17 17</dd></div><div><dt>CMYK</dt><dd>0 0 0 93</dd></div></dl></article>
+        </div>
+          </div>
+          <div class="identity-turnaround-panel">
+        <p class="section-label">턴어라운드</p>
+        <div class="turnaround-grid">
+          <figure><img src="./assets/maehyangi/character/front.svg" alt="매향이 앞모습" /><figcaption>앞모습</figcaption></figure>
+          <figure><img src="./assets/maehyangi/character/left.svg" alt="매향이 좌측면" /><figcaption>우측면</figcaption></figure>
+          <figure><img src="./assets/maehyangi/character/right.svg" alt="매향이 우측면" /><figcaption>좌측면</figcaption></figure>
+          <figure><img src="./assets/maehyangi/character/back.svg" alt="매향이 뒷모습" /><figcaption>뒷모습</figcaption></figure>
+        </div>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매향이</b> 캐릭터 아이덴티티 / 디자인 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="maehyangi-typelogo" style="--accent:#f77fa0; --soft:#fdecef">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>14</b></header>
+        <div class="page-intro">
+          <h2>매향이 타입로고</h2>
+          <p class="body-copy">매향이의 둥근 인상과 캐릭터 고유 이미지를 반영한 전용 표기 시스템입니다. 캐릭터명 표기와 대표 타이틀에 우선 사용합니다.</p>
+        </div>
+        <div class="template-content type-logo-variant-layout">
+          <figure class="type-logo-dimensional"><img src="./assets/type-logo/입체형_매향이@2x-8.png" alt="매향이 타입로고 입체형" /><figcaption>입체형</figcaption></figure>
+          <div class="type-logo-small-variants">
+            <figure><img src="./assets/type-logo/단순형_매향이@2x-8.png" alt="매향이 타입로고 단순형" /><figcaption>단순형</figcaption></figure>
+            <figure><img src="./assets/type-logo/블랙형_매향이@2x-8.png" alt="매향이 타입로고 블랙형" /><figcaption>블랙형</figcaption></figure>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매향이</b> 타입로고 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+      <section class="sheet character-page" id="maehyangi-expressions" style="--accent:#f77fa0; --soft:#fdecef">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>15</b></header>
+        <div class="page-intro">
+          <h2>동작가이드</h2>
+          <p class="body-copy">매향이의 표정과 동작은 고유한 성격을 전달하며, 상황에 맞는 감정 표현으로 친근감을 높입니다.</p>
+        </div>
+        <div class="template-content expression-grid expression-grid-wide all">
+          <figure><img src="./assets/maehyangi/expression/expression-01.svg" alt="매향이 인사 동작" /><figcaption>1. 인사</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-02.svg" alt="매향이 신남 동작" /><figcaption>2. 신남</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-03.svg" alt="매향이 감동 동작" /><figcaption>3. 감동</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-04.svg" alt="매향이 축하 동작" /><figcaption>4. 축하</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-05.svg" alt="매향이 웃김 동작" /><figcaption>5. 웃김</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-06.svg" alt="매향이 파이팅 동작" /><figcaption>6. 파이팅</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-07.svg" alt="매향이 궁금 동작" /><figcaption>7. 궁금</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-08.svg" alt="매향이 화남 동작" /><figcaption>8. 화남</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-09.svg" alt="매향이 슬픔 동작" /><figcaption>9. 슬픔</figcaption></figure>
+          <figure><img src="./assets/maehyangi/expression/expression-10.svg" alt="매향이 사랑해 동작" /><figcaption>10. 사랑해</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매향이</b> 동작가이드 / 표정 표현</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="maehyangi-three-d" style="--accent:#f77fa0; --soft:#fdecef">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>16</b></header>
+        <div class="page-intro">
+          <h2>3D 캐릭터 활용</h2>
+          <p class="body-copy">매향이의 기본 인상과 특징을 유지하되, 3D 동작의 유연성을 위해 팔다리 비율은 상황에 맞게 일부 조정할 수 있습니다.</p>
+        </div>
+        <div class="template-content three-d-layout all">
+          <figure><img src="./assets/maehyangi/3d/maehyangi-3d-basic.png" alt="매향이 기본형 3D" /><figcaption>기본형 3D</figcaption></figure>
+          <figure><img src="./assets/maehyangi/3d/maehyangi-3d-cheer.png" alt="매향이 응원형 3D" /><figcaption>응원형 3D</figcaption></figure>
+          <figure><img src="./assets/maehyangi/3d/maehyangi-3d-heart.png" alt="매향이 하트형 3D" /><figcaption>하트형 3D</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매향이</b> 3D 캐릭터 활용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="maehyangi-applications" style="--accent:#f77fa0; --soft:#fdecef">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>17</b></header>
+        <div class="page-intro">
+          <h2>굿즈 적용</h2>
+          <p class="body-copy">매향이는 다양한 굿즈와 생활 제품에 적용되어 사용자의 일상에 밝고 친근한 인상을 전달합니다.</p>
+        </div>
+        <div class="template-content goods-grid all">
+          <figure><div class="goods-image" role="img" aria-label="매향이 머그컵" data-gallery-src="./assets/maehyangi/goods/product-01.png" style="--goods-bg:url('./assets/maehyangi/goods/product-01.png')"></div><figcaption>머그컵</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 에코백" data-gallery-src="./assets/maehyangi/goods/product-02.png" style="--goods-bg:url('./assets/maehyangi/goods/product-02.png')"></div><figcaption>에코백</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 티셔츠" data-gallery-src="./assets/maehyangi/goods/product-03.png" style="--goods-bg:url('./assets/maehyangi/goods/product-03.png')"></div><figcaption>티셔츠</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 스티커" data-gallery-src="./assets/maehyangi/goods/product-04.png" style="--goods-bg:url('./assets/maehyangi/goods/product-04.png')"></div><figcaption>스티커</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 키링" data-gallery-src="./assets/maehyangi/goods/product-05.png" style="--goods-bg:url('./assets/maehyangi/goods/product-05.png')"></div><figcaption>키링</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 노트" data-gallery-src="./assets/maehyangi/goods/product-06.png" style="--goods-bg:url('./assets/maehyangi/goods/product-06.png')"></div><figcaption>노트</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 폰케이스" data-gallery-src="./assets/maehyangi/goods/product-07.png" style="--goods-bg:url('./assets/maehyangi/goods/product-07.png')"></div><figcaption>폰케이스</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 텀블러" data-gallery-src="./assets/maehyangi/goods/product-08.png" style="--goods-bg:url('./assets/maehyangi/goods/product-08.png')"></div><figcaption>텀블러</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 배지" data-gallery-src="./assets/maehyangi/goods/product-09.png" style="--goods-bg:url('./assets/maehyangi/goods/product-09.png')"></div><figcaption>배지</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매향이 인형" data-gallery-src="./assets/maehyangi/goods/product-10.png" style="--goods-bg:url('./assets/maehyangi/goods/product-10.png')"></div><figcaption>인형</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매향이</b> 굿즈 적용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page character-identity" id="maedori-identity" style="--accent:#90DE63; --soft:#eefadc">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>18</b></header>
+        <div class="identity-grid">
+          <div>
+            <div class="identity-title-row"><h2>매돌이를 소개합니다</h2><span class="identity-badge">캐릭터</span></div>
+            <p class="body-copy">매돌이는 광양의 대표 농특산품인 매실을 모티프로 탄생한 광양시 SNS 캐릭터입니다. 초록초록하고 싱그러운 매실의 이미지와 밝고 통통 튀는 개구쟁이 매력을 함께 전달합니다.</p>
+            <div class="trait-list">
+              <article><strong>성격</strong><span>활발하고 창의적이며 예의 바른 개구쟁이 이미지</span></article>
+              <article><strong>특징</strong><span>광양 매실을 상징하는 초록빛 인상, 귀여운 소년 캐릭터성, 생기 있는 표정</span></article>
+              <article><strong>키워드</strong><span>매실 · 생기 · 개구쟁이 · 친근함 · 창의성</span></article>
+            </div>
+          </div>
+          <div class="identity-visual-pair">
+            <figure class="spot-card solo maedori-solo"><img src="./assets/maedori/character/front.svg" alt="매돌이 2D 기본 캐릭터" /></figure>
+            <figure class="identity-3d maedori-identity-3d"><img src="./assets/maedori/3d/maedori-3d-front.png" alt="매돌이 3D 기본 캐릭터" /></figure>
+          </div>
+        </div>
+        <div class="identity-bottom-grid">
+          <div class="identity-color-panel">
+        <p class="section-label color-label">브랜드 컬러</p>
+        <div class="identity-color-row">
+          <article style="--c:#90DE63"><i></i><b>매실 그린</b><dl><div><dt>HEX</dt><dd>#90DE63</dd></div><div><dt>RGB</dt><dd>144 222 99</dd></div><div><dt>CMYK</dt><dd>35 0 55 13</dd></div></dl></article>
+          <article style="--c:#F6977E"><i></i><b>코랄 포인트</b><dl><div><dt>HEX</dt><dd>#F6977E</dd></div><div><dt>RGB</dt><dd>246 151 126</dd></div><div><dt>CMYK</dt><dd>0 39 49 4</dd></div></dl></article>
+          <article style="--c:#A52249"><i></i><b>딥 매실 레드</b><dl><div><dt>HEX</dt><dd>#A52249</dd></div><div><dt>RGB</dt><dd>165 34 73</dd></div><div><dt>CMYK</dt><dd>0 79 56 35</dd></div></dl></article>
+          <article style="--c:#FFFFFF"><i></i><b>화이트</b><dl><div><dt>HEX</dt><dd>#FFFFFF</dd></div><div><dt>RGB</dt><dd>255 255 255</dd></div><div><dt>CMYK</dt><dd>0 0 0 0</dd></div></dl></article>
+          <article style="--c:#000000"><i></i><b>블랙</b><dl><div><dt>HEX</dt><dd>#000000</dd></div><div><dt>RGB</dt><dd>0 0 0</dd></div><div><dt>CMYK</dt><dd>0 0 0 100</dd></div></dl></article>
+        </div>
+          </div>
+          <div class="identity-turnaround-panel">
+        <p class="section-label">턴어라운드</p>
+        <div class="turnaround-grid">
+          <figure><img src="./assets/maedori/character/front.svg" alt="매돌이 앞모습" /><figcaption>앞모습</figcaption></figure>
+          <figure><img src="./assets/maedori/character/left.svg" alt="매돌이 좌측면" /><figcaption>우측면</figcaption></figure>
+          <figure><img src="./assets/maedori/character/right.svg" alt="매돌이 우측면" /><figcaption>좌측면</figcaption></figure>
+          <figure><img src="./assets/maedori/character/back.svg" alt="매돌이 뒷모습" /><figcaption>뒷모습</figcaption></figure>
+        </div>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매돌이</b> 캐릭터 아이덴티티 / 디자인 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="maedori-typelogo" style="--accent:#90DE63; --soft:#eefadc">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>19</b></header>
+        <div class="page-intro">
+          <h2>매돌이 타입로고</h2>
+          <p class="body-copy">매돌이의 초록 매실 이미지와 귀여운 소년 캐릭터성을 반영한 전용 표기 시스템입니다. 캐릭터명 표기와 대표 타이틀에 우선 사용합니다.</p>
+        </div>
+        <div class="template-content type-logo-variant-layout">
+          <figure class="type-logo-dimensional maedori-logo-main"><img src="./assets/maedori/logo/maedori-type-logo.svg" alt="매돌이 타입로고" /><figcaption>기본형</figcaption></figure>
+          <div class="type-logo-small-variants">
+            <figure><img src="./assets/maedori/logo/maedori-simple.svg" alt="매돌이 심플형" /><figcaption>심플형</figcaption></figure>
+            <figure><img src="./assets/maedori/logo/maedori-black.svg" alt="매돌이 블랙형" /><figcaption>블랙형</figcaption></figure>
+          </div>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매돌이</b> 타입로고 시스템</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="maedori-expressions" style="--accent:#90DE63; --soft:#eefadc">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>20</b></header>
+        <div class="page-intro">
+          <h2>동작가이드</h2>
+          <p class="body-copy">매돌이의 표정과 동작은 매실처럼 싱그러운 인상과 장난기 있는 성격을 전달하며, SNS와 홍보 콘텐츠에서 밝고 즉각적인 감정 표현으로 활용합니다.</p>
+        </div>
+        <div class="template-content expression-grid expression-grid-wide all">
+          <figure><img src="./assets/maedori/expression/expression-01.svg" alt="매돌이 인사 동작" /><figcaption>1. 인사</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-02.svg" alt="매돌이 기쁨 동작" /><figcaption>2. 기쁨</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-03.svg" alt="매돌이 환영 동작" /><figcaption>3. 환영</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-04.svg" alt="매돌이 사랑 동작" /><figcaption>4. 사랑</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-05.svg" alt="매돌이 슬픔 동작" /><figcaption>5. 슬픔</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-06.svg" alt="매돌이 신남 동작" /><figcaption>6. 신남</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-07.svg" alt="매돌이 화남 동작" /><figcaption>7. 화남</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-08.svg" alt="매돌이 축하 동작" /><figcaption>8. 축하</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-09.svg" alt="매돌이 기대 동작" /><figcaption>9. 기대</figcaption></figure>
+          <figure><img src="./assets/maedori/expression/expression-10.svg" alt="매돌이 당황 동작" /><figcaption>10. 당황</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매돌이</b> 동작가이드 / 표정 표현</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="maedori-three-d" style="--accent:#90DE63; --soft:#eefadc">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>21</b></header>
+        <div class="page-intro">
+          <h2>3D 캐릭터 활용</h2>
+          <p class="body-copy">매돌이의 둥근 매실 실루엣과 밝은 표정을 유지하면서, 기본·기쁨·화남 동작으로 3D 활용 범위를 정리합니다.</p>
+        </div>
+        <div class="template-content three-d-layout all maedori-three-d-layout">
+          <figure><img src="./assets/maedori/3d/maedori-3d-front.png" alt="매돌이 기본형 3D" /><figcaption>기본형 3D</figcaption></figure>
+          <figure><img src="./assets/maedori/3d/maedori-3d-happy.png" alt="매돌이 기쁨 3D" /><figcaption>기쁨 3D</figcaption></figure>
+          <figure><img src="./assets/maedori/3d/maedori-hello-3d.png" alt="매돌이 안녕 3D" /><figcaption>안녕3D</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매돌이</b> 3D 캐릭터 활용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      <section class="sheet character-page" id="maedori-applications" style="--accent:#90DE63; --soft:#eefadc">
+        <header class="intro-top guide-top"><span class="intro-brand">GWANGYANG FRIENDS</span><span>CHARACTER GUIDE</span><i></i><b>22</b></header>
+        <div class="page-intro">
+          <h2>굿즈 적용</h2>
+          <p class="body-copy">매돌이는 초록 매실의 싱그러움과 장난기 있는 표정을 살려 생활 소품, 패브릭, 팬 굿즈에 자연스럽게 확장합니다.</p>
+        </div>
+        <div class="template-content goods-grid all maedori-goods-grid">
+          <figure><div class="goods-image" role="img" aria-label="매돌이워머" data-gallery-src="./assets/maedori/goods/maedori-warmer.png" style="--goods-bg:url('./assets/maedori/goods/maedori-warmer.png')"></div><figcaption>매돌이워머</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 키링" data-gallery-src="./assets/maedori/goods/매돌이-키링-3d.png" style="--goods-bg:url('./assets/maedori/goods/매돌이-키링-3d.png')"></div><figcaption>키링</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 마우스패드" data-gallery-src="./assets/maedori/goods/maedori-mousepad.png" style="--goods-bg:url('./assets/maedori/goods/maedori-mousepad.png')"></div><figcaption>마우스패드</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 대형에어벌룬" data-gallery-src="./assets/maedori/goods/maedori-air-balloon.png" style="--goods-bg:url('./assets/maedori/goods/maedori-air-balloon.png')"></div><figcaption>대형에어벌룬</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 홍보영상" data-gallery-src="./assets/maedori/goods/motion.png" style="--goods-bg:url('./assets/maedori/goods/motion.png')"></div><figcaption>홍보영상</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 달력" data-gallery-src="./assets/maedori/goods/2025 매돌이 달력 목업.png" style="--goods-bg:url('./assets/maedori/goods/2025 매돌이 달력 목업.png')"></div><figcaption>달력</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 비치타올" data-gallery-src="./assets/maedori/goods/product-01.png" style="--goods-bg:url('./assets/maedori/goods/product-01.png')"></div><figcaption>비치타올</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 양말" data-gallery-src="./assets/maedori/goods/product-02.png" style="--goods-bg:url('./assets/maedori/goods/product-02.png')"></div><figcaption>양말</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 지비츠" data-gallery-src="./assets/maedori/goods/product-03.png" style="--goods-bg:url('./assets/maedori/goods/product-03.png')"></div><figcaption>지비츠</figcaption></figure>
+          <figure><div class="goods-image" role="img" aria-label="매돌이 파우치" data-gallery-src="./assets/maedori/goods/product-04.png" style="--goods-bg:url('./assets/maedori/goods/product-04.png')"></div><figcaption>파우치</figcaption></figure>
+        </div>
+        <footer class="intro-foot guide-foot"><span><b class="footer-character-name">매돌이</b> 굿즈 적용</span><span>BRAND GUIDEBOOK 2026</span></footer>
+      </section>
+
+      
+      <section class="sheet thanks" id="thanks">
+        <h2>감사합니다</h2>
+        <p>GWANGYANG FRIENDS</p>
+        <dl class="publication-info">
+          <div><dt>발행:</dt><dd>광양시</dd></div>
+          <div><dt>제작:</dt><dd>스튜디오 오디</dd></div>
+          <div><dt>발행일:</dt><dd>2026.06</dd></div>
+        </dl>
+      </section>
+    </main>
+
+    <div class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="이미지 크게 보기">
+      <button class="lightbox-close" type="button" aria-label="닫기">×</button>
+      <button class="lightbox-nav lightbox-prev" type="button" aria-label="이전 이미지">‹</button>
+      <figure class="lightbox-figure"><img src="" alt="" /><figcaption></figcaption></figure>
+      <button class="lightbox-nav lightbox-next" type="button" aria-label="다음 이미지">›</button>
+    </div>
+
+    <script>
+      (() => {
+        const root = document.documentElement;
+        const pageWidth = 1123;
+        const pageHeight = 794;
+        const lightbox = document.querySelector('.lightbox');
+        const lightboxImage = lightbox.querySelector('img');
+        const lightboxCaption = lightbox.querySelector('figcaption');
+        const closeButton = lightbox.querySelector('.lightbox-close');
+        const prevButton = lightbox.querySelector('.lightbox-prev');
+        const nextButton = lightbox.querySelector('.lightbox-next');
+        let activeItems = [];
+        let activeIndex = 0;
+        const ensureFrames = () => { document.querySelectorAll('.book > .sheet').forEach((sheet) => { const frame = document.createElement('div'); frame.className = 'sheet-frame'; sheet.before(frame); frame.appendChild(sheet); }); };
+        const syncScale = () => { if (window.matchMedia('print').matches) { root.style.setProperty('--screen-scale', '1'); root.style.setProperty('--screen-sheet-width', pageWidth + 'px'); root.style.setProperty('--screen-sheet-height', pageHeight + 'px'); root.style.setProperty('--screen-gap', '0px'); return; } const available = Math.max(320, window.innerWidth - 36); const scale = Math.min(1, available / pageWidth); root.style.setProperty('--screen-scale', scale.toFixed(5)); root.style.setProperty('--screen-sheet-width', pageWidth * scale + 'px'); root.style.setProperty('--screen-sheet-height', pageHeight * scale + 'px'); root.style.setProperty('--screen-gap', 34 * scale + 'px'); };
+        const getGalleryData = (figure) => { const image = figure.querySelector('img'); const backgroundImage = figure.querySelector('[data-gallery-src]'); const caption = figure.querySelector('figcaption')?.textContent?.trim() || image?.alt || backgroundImage?.getAttribute('aria-label') || ''; return { src: image ? (image.currentSrc || image.src) : backgroundImage?.dataset.gallerySrc, alt: image?.alt || backgroundImage?.getAttribute('aria-label') || caption, caption }; };
+        const renderLightbox = () => { const item = activeItems[activeIndex]; if (!item) return; lightboxImage.src = item.src; lightboxImage.alt = item.alt; lightboxCaption.textContent = item.caption; };
+        const openLightbox = (items, index) => { activeItems = items; activeIndex = index; renderLightbox(); lightbox.classList.add('is-open'); lightbox.setAttribute('aria-hidden', 'false'); document.body.classList.add('is-lightbox-open'); closeButton.focus(); };
+        const closeLightbox = () => { lightbox.classList.remove('is-open'); lightbox.setAttribute('aria-hidden', 'true'); document.body.classList.remove('is-lightbox-open'); lightboxImage.removeAttribute('src'); };
+        const moveLightbox = (direction) => { if (!activeItems.length) return; activeIndex = (activeIndex + direction + activeItems.length) % activeItems.length; renderLightbox(); };
+        const restoreHashPosition = () => { const id = decodeURIComponent(window.location.hash.replace('#', '')); if (!id) return; document.getElementById(id)?.scrollIntoView(); };
+        const setupGalleries = () => { ['.turnaround-grid figure', '.type-logo-variant-layout figure', '.expression-grid figure', '.three-d-layout figure', '.goods-grid figure', '.size-set-grid figure'].forEach((selector) => { const figures = Array.from(document.querySelectorAll(selector)); const items = figures.map(getGalleryData).filter((item) => item.src); figures.forEach((figure) => { const item = getGalleryData(figure); if (!item.src) return; const index = items.findIndex((entry) => entry.src === item.src); figure.classList.add('gallery-item'); figure.setAttribute('role', 'button'); figure.setAttribute('tabindex', '0'); figure.setAttribute('aria-label', item.caption + ' 크게 보기'); figure.addEventListener('click', () => openLightbox(items, index)); figure.addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openLightbox(items, index); } }); }); }); };
+        ensureFrames(); setupGalleries(); syncScale(); window.addEventListener('resize', syncScale); window.addEventListener('beforeprint', syncScale); window.addEventListener('afterprint', syncScale); closeButton.addEventListener('click', closeLightbox); prevButton.addEventListener('click', () => moveLightbox(-1)); nextButton.addEventListener('click', () => moveLightbox(1)); lightbox.addEventListener('click', (event) => { if (event.target === lightbox) closeLightbox(); }); window.addEventListener('keydown', (event) => { if (!lightbox.classList.contains('is-open')) return; if (event.key === 'Escape') closeLightbox(); if (event.key === 'ArrowLeft') moveLightbox(-1); if (event.key === 'ArrowRight') moveLightbox(1); }); requestAnimationFrame(restoreHashPosition);
+      })();
+    </script>
+  </body>
+</html>
+
+
+
+
+
